@@ -1,0 +1,17 @@
+clc;clear all;
+
+N=input('enter a number of point charges:');
+P=input('enter thr co-ordintes of point at which calculted in freq [x y z]:');
+esp0=input('enter the value of permitivity constant of medium:');
+
+E=0;
+for M=1 : N
+    Q=input('enter the magnitude of point charges:');
+    T=input('enter the coordinate at which sum charge is located as [x y z]:');
+    R=norm(P-T);
+    EN=Q/(4*%pi*esp0*R*R);
+    E=E+EN
+   
+end
+
+disp('the resultant electric field intensity=',E,'V/m');
