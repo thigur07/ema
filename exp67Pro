@@ -1,0 +1,13 @@
+Connect the AC Supply to Kit. 
+2. Ensure that all fault switches in normal position. 
+3. Make the connections as shown in Block Diagram 
+4. Connect 1KHz.Sine Wave signal to660nmFO Transmitter output and FO Receiver input. 
+5. Connect 1Mtr. FO Cable between660nmFO Transmitter output and660nmFO Receiver 
+input. 
+6. Connect660nmFO Receiver output to AC Amplifier input. 
+7. Set the switch SW3 to Analog Mode. 
+8. Switch ON the power supply of the trainer. 
+9. Observe the output signal at FO Receiver on CRO. 
+10. Wind the 1 meter FO cable on the mandrel provided and observe the 
+corresponding AC amplifier output on CRO. It will be gradually reducing showing loss 
+due to bend
