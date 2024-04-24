@@ -1,0 +1,22 @@
+Program:
+clc;
+clear;
+close;
+Pin = input("Enter input power: ")
+L = 0:0.01:15; //distance in km
+alpha = [2,0.5,0.2]; //attenuation in db/km
+Pol = Pin./(10^(alpha(1)*L/10))
+Po2 = Pin./(10^(alpha(2)*L/10))
+Po3 = Pin./(10^(alpha(3)*L/10))
+plot (L,Pol,'r:',L,Po2,'k-',L,Po3,'b-.')
+legend("alpha = 2dB/km","alpha= 0.5dB/km","alpha 0.2dB/km")
+xlabel("Distance in km")
+ylabel("Output Power")
+title("Output Power vs Distance")
+Po = 2*10^-6; //Minimum detectable receiver power
+L1 = (10/alpha(1))*log10(Pin./Po);
+disp("Max. possible link length without repeaters (in km) when alpha = 0.2dB/km",L1)
+L2 = (10/alpha(2))*log10(Pin./Po);
+disp("Max. possible link length without repeaters (in km) when alpha = 0.5dB/km",L2)
+L3 = (10/alpha(3))*log10(Pin./Po);
+disp("Max. possible link length without repeaters (in km) when alpha = 2dB/km",L3)
