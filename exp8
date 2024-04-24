@@ -1,0 +1,26 @@
+CODE
+clc;clear;clf;
+p1=60e-6
+p2=0.004e-6
+p3=26.0e-6
+p4=27.5e-6
+excessloss= 10*log10(p1/(p3+p4))
+disp("excess loss in db:",excessloss)
+insertionloss14=10*log10(p1/p4)
+disp("insertion loss in db:",insertionloss14)
+insertionloss13=10*log10(p1/p3)
+disp("insertion loss in db:",insertionloss13)
+crosstalk=10*log10(p2/p1)
+disp("crosstalk in db:",crosstalk)
+couplingRatio=(p4/(p3+p4))*100
+disp("couplingRatio in db:",couplingRatio)
+k1=p4/(p3+p4)
+z=0:0.01:10
+k=2*%pi/13*1.45
+p3=p1*(cos(k*z).^2)
+p4=p1*(sin(k*z).^2)
+plot(z,p3/p1)
+plot(z,p4/p1,'--')
+xlabel("Fiber draw length")
+ylabel("Power Ratio")
+title("FBT coupler characteristics")
