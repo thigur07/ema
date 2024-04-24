@@ -1,0 +1,63 @@
+//Experiment no 1a
+clc
+clear
+
+n1 = input("enter RI of core : ")
+n2 = input("enter RI of cladding : ")
+NA = sqrt(n1^2 - n2^2)
+
+disp("Numerical aperture" , NA)
+phiC = asin(n2/n1)
+disp("critical angle in degree" ,phiC*180/%pi)
+
+n0 = 1;// for air
+thetaA = asin(NA/n0);
+disp("acceptance angle in degree" ,thetaA*180/%pi)
+
+\\Experi 1b
+clc
+clear
+thetaA = input("Enter the acceptance angle : ")
+thetaA = thetaA*%pi/180
+delta = input("Enter relative refractive index :")
+
+NA = sin(thetaA)
+disp("Numerical aperture" , NA)
+
+n1 = NA/sqrt(2*delta);
+disp("RI of core :", n1)
+
+n2 = sqrt(n1^2 - NA^2);
+disp(" RI of cladding :" ,n2)
+
+phiC = asin(n2/n1)
+disp("critical angle in degree" ,phiC*180/%pi)
+
+
+//Experiment no 1c
+clc
+clear
+
+NA = input("Enter Numerical aperture : ")
+delta = input("Enter relative refractive index :")
+
+n1 = NA/sqrt(2*delta);
+disp("RI of core :", n1)
+
+n2 = sqrt(n1^2 - NA^2);
+disp(" RI of cladding :" ,n2)
+
+//EXPERIMENT NO 1D
+clc
+clear
+
+n1 = input("enter RI of core : ")
+delta = input("Enter relative refractive index :")
+
+NA = n1*sqrt(2*delta)
+disp("numerical aperture" , NA)
+
+thetaA = asin(NA);
+disp("acceptance angle in degree" ,thetaA*180/%pi)
+
+

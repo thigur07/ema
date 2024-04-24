@@ -1,0 +1,67 @@
+// Experiment No. 2a
+// V number as function of wavelength
+clc;
+clear;
+close;
+
+a = input("Enter Core Radius in um: ")
+a = a*10^-6;
+lambda = 800:1600; //wavelength in nm
+lambda = lambda*10^-9;
+NA = [0.1,0.15,0.2];
+for i = 1:3
+    V(i,:) = (2*%pi*a*NA(i))./lambda;
+end
+plot(lambda,V(1,:),'k-',lambda,V(2,:),'b-.',lambda,V(3,:),'r:');
+xlabel('Wavelength');
+ylabel('V number');
+title('V number as  a function of wavelength');
+legend("NA = 0.1","NA = 0.15","NA = 0.2");
+
+
+// Experiment No. 2b Graded index fiber
+clc;
+clear;
+close;
+
+NA = input("Enter the Numerical Aperture NA: ");
+Mg = input("Enter the number of guided modes: ");
+b = input("Enter the Core diameter in um: ");
+b = b*10^-6;
+a = b/2;
+alpha = 2;
+V2 = 2.405; //for single mode opeartion
+
+V = sqrt((2*(alpha+2)*Mg)/alpha);
+disp("V number : ",V)
+
+lambda = (2*%pi*a*NA)/V;
+disp("Wavelength: ",lambda)
+
+a2 = (V2*lambda)/(NA*2*%pi);
+b2 = a2*2
+disp("Core Diameter for Single mode Operation: ",b2);
+
+
+// Experiment No. 2c Step index fiber
+clc;
+clear;
+close;
+
+NA = input("Enter the Numerical Aperture NA: ");
+Ms = input("Enter the number of guided modes: ");
+b = input("Enter the Core diameter in um: ");
+b = b*10^-6;
+a = b/2;
+//alpha = 2;
+V2 = 2.405; //For single mode operation
+
+V = sqrt(Ms*2)
+disp("V number : ",V)
+
+lambda = (2*%pi*a*NA)/V;
+disp("Wavelength: ",lambda)
+
+a2 = (V2*lambda)/(NA*2*%pi);
+b2 = a2*2
+disp("Core Diameter for Single mode Operation: ",b2);
